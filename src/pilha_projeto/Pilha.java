@@ -1,5 +1,5 @@
 package pilha_projeto;
-
+import java.util.Random;
 
 public class Pilha {
 	
@@ -14,6 +14,12 @@ public class Pilha {
 	void inserir(int valor) {
 		topo++;
 		elementos[topo] = valor;
+	}
+	
+	void inserirAleatorio(int tamanhoPilha) {
+		Random rand = new Random();
+		topo++;
+		elementos[topo] = rand.nextInt(tamanhoPilha) + 1;
 	}
 	
 	void remover() {
@@ -91,5 +97,42 @@ public class Pilha {
 	        System.out.println(copia[i]);
 	    }
 	}
+	
+	void compararValores(Pilha outraPilha) {
+	    if (topo != outraPilha.topo) {
+	        System.out.println("Pilhas com tamanhos diferentes, impossível comparar!");
+	        return;
+	    }
+
+	    boolean iguais = true;
+
+	    for (int i = 0; i <= topo; i++) {
+	        if (elementos[i] != outraPilha.elementos[i]) {
+	            iguais = false;
+	            break; 
+	        }
+	    }
+
+	    if (iguais) {
+	        System.out.println("Pilhas com VALORES IGUAIS!");
+	    } else {
+	        System.out.println("Pilhas com VALORES DIFERENTES!");
+	    }
+	}
+	
+	void inserirFibonacci(){
+		int numeroAnterior = 0;
+		int numeroAtual = 1;
+		int numeroProximo;
+		
+	 for (int i = 0; i < elementos.length; i++) {
+		 topo++;
+		 elementos[topo] = numeroAnterior;
+		 numeroProximo = numeroAnterior + numeroAtual;
+		 numeroAnterior = numeroAtual;
+		 numeroAtual = numeroProximo;
+	 }
+	}
+	
 
 }

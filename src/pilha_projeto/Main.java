@@ -3,21 +3,35 @@ package pilha_projeto;
 public class Main {
 	
 	 public static void main(String[] args) {
-		 Pilha primeiraPilha = new Pilha (30);
-			primeiraPilha.inserir(10);
-			primeiraPilha.inserir(20);
-			primeiraPilha.inserir(30);
+		
+	System.out.println("------------1 PILHA------------");	
+	
+		 Pilha primeiraPilha = new Pilha (10);
+		 for(int i = 0; i < 10; i++) {
+			 primeiraPilha.inserirAleatorio(10);
+		 }
 			primeiraPilha.exibir();
-			primeiraPilha.remover();
-			primeiraPilha.exibir();
-			
-			System.out.println("A média dos valores da pilha é: " + primeiraPilha.media());
-			System.out.println("Número Maior: " + primeiraPilha.maior());
-			System.out.println("Número Menor: " + primeiraPilha.menor());
-			
-			primeiraPilha.ordenarCrescente();
-			primeiraPilha.ordenarDecrescente();
-			
+	System.out.println("-------------------------------");		
+	
+	
+	
+	System.out.println("------------2 PILHA------------");	
+	
+		Pilha segundaPilha = new Pilha (11);
+		for(int i = 0; i < 10; i++) {
+			segundaPilha.inserirAleatorio(10);
+		}
+		   segundaPilha.exibir();
+	System.out.println("-------------------------------");
+	
+	System.out.println("----COMPARAR TAMANHO/VALOR-----");
+		 primeiraPilha.compararValores(segundaPilha);
+		 
+	System.out.println("-----------FIBONACCI-----------");
+		Pilha pilhaFibonacci = new Pilha (10);
+		pilhaFibonacci.inserirFibonacci();
+		pilhaFibonacci.exibir();
+	
 
 	 }
 
