@@ -134,5 +134,51 @@ public class Pilha {
 	 }
 	}
 	
+	void contarNumeroPar() {
+		int quantidade = 0;
+		
+		System.out.println("--- VALORES PARES NA PILHA ---");
+		for(int i = 0; i <= topo; i++) {
+			if(elementos[i] % 2 == 0) {
+				System.out.println(elementos[i]);
+				quantidade++;
+			}
+		}
+		 System.out.println("QUANTIDADE DE N PARES NA PILHA É: " + quantidade);
+	}
+	
+	Pilha numerosNaoUtilizados(Pilha outraPilha, int tamanho3) {
+	    Pilha resultado = new Pilha(tamanho3);
 
-}
+	    for (int numero = 1; numero <= 100; numero++) {
+	        if (resultado.topo + 1 == tamanho3) break;
+
+	        boolean usadoNaPilha1 = false;
+	        boolean usadoNaPilha2 = false;
+
+	        for (int i = 0; i <= topo; i++) {
+	            if (elementos[i] == numero) {
+	                usadoNaPilha1 = true;
+	                break;
+	            }
+	        }
+
+	        for (int i = 0; i <= outraPilha.topo; i++) {
+	            if (outraPilha.elementos[i] == numero) {
+	                usadoNaPilha2 = true;
+	                break;
+	            }
+	        }
+
+	        if (!usadoNaPilha1 && !usadoNaPilha2) {
+	            resultado.inserir(numero);
+	        }
+	    }
+
+	    return resultado;
+	}
+	
+
+	 
+	}
+	
